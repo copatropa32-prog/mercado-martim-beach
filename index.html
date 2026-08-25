@@ -15,7 +15,7 @@
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-container img { height: 45px; width: auto; border-radius: 6px; }
         .logo-container span { font-weight: 700; font-size: 1.2rem; color: #fff; }
-        nav a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
         nav a:hover { color: #f39c12; }
 
         /* Hero Section */
@@ -36,27 +36,31 @@
         .section h2 { font-size: 2.2rem; margin-bottom: 15px; color: #0b1c3c; font-weight: 700; }
         .section-sub { color: #666; margin-bottom: 50px; font-size: 1.05rem; }
 
-        /* Vitrine de Produtos (Imagens Reais) */
-        .grid-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; text-align: left; }
-        .card-vitrine { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.06); transition: 0.3s; border-top: 5px solid #f39c12; }
+        /* Vitrine de Produtos (Fotos Reais) */
+        .grid-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left; }
+        .card-vitrine { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.06); transition: 0.3s; border-top: 5px solid #f39c12; display: flex; flex-direction: column; justify-content: space-between; }
         .card-vitrine:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card-vitrine img { width: 100%; height: 220px; object-fit: cover; }
+        .card-vitrine img { width: 100%; height: 210px; object-fit: cover; }
         .card-content { padding: 25px; }
-        .card-content h3 { color: #0b1c3c; margin-bottom: 10px; font-size: 1.3rem; }
-        .card-content p { color: #666; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
+        .card-content h3 { color: #0b1c3c; margin-bottom: 10px; font-size: 1.25rem; }
+        .card-content p { color: #666; font-size: 0.93rem; line-height: 1.5; margin-bottom: 20px; }
         
         /* Grid de Vídeos */
         .grid-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
         .video-card { background: white; padding: 15px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .video-card video { width: 100%; height: 350px; object-fit: cover; border-radius: 8px; }
+        .video-card video { width: 100%; height: 340px; object-fit: cover; border-radius: 8px; }
 
-        /* Seção de Informações / Contato */
+        /* Seção de Localização com Google Maps */
+        .location-section { background: #fff; padding: 80px 8%; text-align: center; border-top: 1px solid #e2e8f0; }
+        .map-container { margin-top: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid #0b1c3c; }
+        .map-container iframe { width: 100%; height: 450px; border: 0; display: block; }
+
+        /* Rodapé e Informações */
         .info-container { background: #0b1c3c; color: white; padding: 60px 8%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: left; border-top: 6px solid #f39c12; }
         .info-box { max-width: 320px; }
         .info-box h4 { color: #f39c12; margin-bottom: 15px; font-size: 1.25rem; }
         .info-box p { color: #cbd5e1; line-height: 1.6; font-size: 0.95rem; }
 
-        /* Rodapé com Logotipo */
         footer { background: #050d1a; color: #94a3b8; text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
         footer img { height: 50px; width: auto; border-radius: 8px; }
         footer p { font-size: 0.9rem; }
@@ -73,7 +77,7 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO COM LOGOTIPO -->
+    <!-- CABEÇALHO -->
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="Martim Beach Logo">
@@ -81,9 +85,9 @@
         </div>
         <nav>
             <a href="#inicio">Início</a>
-            <a href="#destaques">Destaques</a>
+            <a href="#vitrine">Produtos</a>
             <a href="#videos">Vídeos</a>
-            <a href="#contato">Contato</a>
+            <a href="#localizacao">Localização</a>
         </nav>
     </header>
 
@@ -92,53 +96,69 @@
         <h1>Qualidade e Tradição na Martim de Sá</h1>
         <p>Encontre tudo o que você precisa para aproveitar seus dias de praia. Produtos frescos, hortifrúti selecionado, padaria quentinha e pizzas artesanais incríveis!</p>
         <div class="btn-group">
-            <a href="https://www.ifood.com.br" target="_blank" class="btn btn-ifood"><i class="fa-solid fa-utensils"></i> Pedir pelo iFood</a>
+            <a href="https://www.ifood.com.br" target="_blank" class="btn btn-ifood"><img src="ifood.png" alt="iFood" style="height: 20px; width: auto; filter: brightness(0) invert(1);"> Pedir pelo iFood</a>
             <a href="https://wa.me/551232112812" target="_blank" class="btn btn-whats"><i class="fa-brands fa-whatsapp"></i> WhatsApp (12) 3211-2812</a>
         </div>
     </section>
 
-    <!-- VITRINE COM FOTOS REAIS -->
-    <section class="section" id="destaques">
-        <h2>Nossos Setores e Ofertas</h2>
-        <p class="section-sub">Confira o que preparamos especialmente para o seu dia a dia.</p>
+    <!-- VITRINE COM TODAS AS FOTOS REAIS -->
+    <section class="section" id="vitrine">
+        <h2>Conheça Nossos Setores</h2>
+        <p class="section-sub">Tudo o que há de melhor em mercadoria, hortifrúti e padaria pertinho de você.</p>
         
         <div class="grid-vitrine">
+            <!-- 1. Pizza Promoção -->
             <div class="card-vitrine">
                 <img src="pizzapromocao.png" alt="Pizzas Artesanais">
                 <div class="card-content">
                     <h3>Pizzas Artesanais</h3>
-                    <p>Cansado da mesma pizza de sempre? Sabores especiais e massa fresquinha para animar a sua noite com economia e muito sabor!</p>
+                    <p>Massa fresquinha, recheios generosos e muito sabor para animar a sua noite sem pesar no bolso.</p>
                     <a href="https://wa.me/551232112812?text=Olá!%20Gostaria%20de%20pedir%20uma%20pizza." target="_blank" class="btn btn-whats" style="padding: 10px 15px; font-size: 0.9rem; justify-content: center;">Pedir Pizza</a>
                 </div>
             </div>
 
+            <!-- 2. Pizza iFood -->
+            <div class="card-vitrine">
+                <img src="pizzaifood.png" alt="Delivery de Pizza">
+                <div class="card-content">
+                    <h3>Delivery Rápido</h3>
+                    <p>Peça nossas delícias de forma prática através dos nossos canais de atendimento ou plataforma de entrega.</p>
+                    <a href="https://www.ifood.com.br" target="_blank" class="btn btn-ifood" style="padding: 10px 15px; font-size: 0.9rem; justify-content: center;">Abrir no iFood</a>
+                </div>
+            </div>
+
+            <!-- 3. Hortifrúti -->
             <div class="card-vitrine">
                 <img src="hotifruit.png" alt="Hortifrúti Fresquinho">
                 <div class="card-content">
                     <h3>Hortifrúti Fresquinho</h3>
-                    <p>Frutas, verduras e legumes selecionados no ponto ideal para garantir o máximo de saúde, qualidade e sabor para a sua mesa.</p>
-                    <span style="color: #e67e22; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-star"></i> Ofertas especiais nas datas!</span>
+                    <p>Frutas, verduras e legumes selecionados diariamente para garantir total qualidade para a sua família.</p>
+                    <span style="color: #e67e22; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-star"></i> Qualidade Garantida</span>
                 </div>
             </div>
 
+            <!-- 4. Pães -->
             <div class="card-vitrine">
                 <img src="paes.png" alt="Padaria e Confeitaria">
                 <div class="card-content">
                     <h3>Padaria & Delícias</h3>
-                    <p>Pão francês quentinho, bolos artesanais e produtos fresquinhos todos os dias para o seu café da manhã ou lanche da tarde.</p>
-                    <span style="color: #0b1c3c; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-bread-slice"></i> Saindo do forno</span>
+                    <p>Pão francês quentinho e produtos fresquinhos saindo do forno nos melhores horários do seu dia.</p>
+                    <span style="color: #0b1c3c; font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-bread-slice"></i> Sempre Fresco</span>
                 </div>
             </div>
         </div>
 
-        <!-- SEÇÃO DE VÍDEOS -->
-        <div id="videos" style="margin-top: 80px;">
-            <h2>Conheça Nosso Mercado por Dentro</h2>
-            <p class="section-sub">Dê uma olhada em nossa estrutura e produtos em vídeo.</p>
+        <!-- VÍDEOS AUTORAIS INTEGRADOS -->
+        <div id="videos" style="margin-top: 90px;">
+            <h2>Por Dentro do Martim Beach</h2>
+            <p class="section-sub">Dê uma olhada em nossa estrutura e bastidores em vídeo.</p>
             
             <div class="grid-videos">
                 <div class="video-card">
                     <video controls src="videomercado.mp4" poster="mercado.png"></video>
+                </div>
+                <div class="video-card">
+                    <video controls src="mercadodentro.mp4" poster="mercado.png"></video>
                 </div>
                 <div class="video-card">
                     <video controls src="videopaes.mp4" poster="paes.png"></video>
@@ -150,7 +170,17 @@
         </div>
     </section>
 
-    <!-- INFORMAÇÕES -->
+    <!-- SEÇÃO DE LOCALIZAÇÃO COM GOOGLE MAPS -->
+    <section class="location-section" id="localizacao">
+        <h2>Onde Estamos</h2>
+        <p class="section-sub">Venha nos fazer uma visita na Praia da Martim de Sá em Caraguatatuba.</p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.156708451185!2d-45.4057!3d-23.6183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd7fd4d9981e7d%3A0x63d91ea4489a3ad5!2sAv.%20Dr.%20Aldino%20Schiavi%2C%20271%20-%20Martim%20de%20S%C3%A1%2C%20Caraguatatuba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES DE CONTATO -->
     <div class="info-container" id="contato">
         <div class="info-box">
             <h4>📍 Endereço</h4>
