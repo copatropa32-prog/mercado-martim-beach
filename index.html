@@ -9,13 +9,16 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: #f9f9f9; color: #333; }
+        
+        /* Cabeçalho com Azul Corporativo */
         header { background: #0b1c3c; color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .logo-area { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; }
         .logo-area i { color: #f39c12; }
         nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover { color: #f39c12; }
         
-        .hero { background: linear-gradient(rgba(11,28,60,0.8), rgba(11,28,60,0.8)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80') center/cover; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; margin-top: 60px; }
+        /* Hero com Destaque Laranja e Azul */
+        .hero { background: linear-gradient(rgba(11,28,60,0.85), rgba(11,28,60,0.85)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80') center/cover; padding: 140px 10% 80px 10%; display: flex; flex-direction: column; align-items: center; text-align: center; color: white; }
         .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: #f39c12; }
         .hero p { font-size: 1.1rem; max-width: 600px; margin-bottom: 30px; }
         
@@ -23,16 +26,27 @@
         .btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
         .btn-ifood { background-color: #ea1d2c; color: white; }
         .btn-ifood:hover { background-color: #c41320; }
-        .btn-whats { background-color: #25d366; color: white; }
-        .btn-whats:hover { background-color: #1ebd59; }
+        .btn-whats { background-color: #f39c12; color: #0b1c3c; font-weight: 700; }
+        .btn-whats:hover { background-color: #e08b0b; }
 
         .section { padding: 60px 10%; text-align: center; }
         .section h2 { font-size: 2rem; margin-bottom: 40px; color: #0b1c3c; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left; }
-        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #f39c12; }
-        .card h3 { margin-bottom: 10px; color: #0b1c3c; }
 
-        .info-box { background: #0b1c3c; color: white; padding: 40px; border-radius: 8px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 40px; text-align: left; }
+        /* Vitrine de Pizzas (Destaque Principal) */
+        .pizza-banner { background: linear-gradient(135deg, #0b1c3c, #163264); color: white; padding: 40px; border-radius: 12px; margin-bottom: 50px; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; text-align: left; border-left: 6px solid #f39c12; }
+        .pizza-banner div { flex: 1; min-width: 280px; }
+        .pizza-banner h3 { color: #f39c12; font-size: 2rem; margin-bottom: 15px; }
+        .pizza-banner p { line-height: 1.6; margin-bottom: 20px; color: #ddd; }
+        .pizza-badge { background: #f39c12; color: #0b1c3c; padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; display: inline-block; margin-bottom: 10px; }
+
+        /* Grid de Hortifrúti e Serviços */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; text-align: left; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #f39c12; }
+        .card h3 { margin-bottom: 10px; color: #0b1c3c; display: flex; align-items: center; gap: 8px; }
+        .card h3 i { color: #f39c12; }
+        .price-tag { color: #ea1d2c; font-weight: bold; font-size: 1.1rem; margin-top: 10px; display: block; }
+
+        .info-box { background: #0b1c3c; color: white; padding: 40px; border-radius: 8px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-top: 50px; text-align: left; border-top: 4px solid #f39c12; }
         .info-box div { max-width: 300px; }
         .info-box h4 { color: #f39c12; margin-bottom: 10px; font-size: 1.2rem; }
 
@@ -54,38 +68,58 @@
         </div>
         <nav>
             <a href="#inicio">Início</a>
-            <a href="#servicos">Diferenciais</a>
-            <a href="#contato">Localização & Contato</a>
+            <a href="#pizzas">Pizzas</a>
+            <a href="#hortifruti">Hortifrúti</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
     <section id="inicio" class="hero">
         <h1>Martim Beach Mercado e Padaria</h1>
-        <p>Tudo o que você precisa na Martim de Sá, com a qualidade que você já conhece, agora também na sua casa!</p>
+        <p>Qualidade e tradição na Martim de Sá. Peça suas compras, hortifrúti fresco e pizzas quentinhas!</p>
         <div class="btn-group">
             <a href="https://www.ifood.com.br" target="_blank" class="btn btn-ifood"><i class="fa-solid fa-utensils"></i> Pedir pelo iFood</a>
-            <a href="https://wa.me/551232112812" target="_blank" class="btn btn-whats"><i class="fa-brands fa-whatsapp"></i> Encomendar via WhatsApp</a>
+            <a href="https://wa.me/5512991584371" target="_blank" class="btn btn-whats"><i class="fa-brands fa-whatsapp"></i> WhatsApp (12) 99158-4371</a>
         </div>
     </section>
 
-    <section id="servicos" class="section">
-        <h2>Por que comprar conosco?</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>🥖 Padaria Artesanal</h3>
-                <p>Pão francês quentinho saindo nos horários principais, bolos frescos e lanches preparados na hora para o seu café.</p>
+    <section class="section">
+        
+        <!-- SEÇÃO DE PIZZAS EM DESTAQUE -->
+        <div class="pizza-banner" id="pizzas">
+            <div>
+                <span class="pizza-badge">Noite de Sabores</span>
+                <h3>Nossas Pizzas Artesanais</h3>
+                <p>Cansado da mesma pizza de sempre? A sua noite merece uma explosão de sabor sem pesar no bolso! Massa fresquinha, molho artesanal e recheio generoso saindo do forno.</p>
+                <a href="https://wa.me/5512991584371?text=Olá!%20Gostaria%20de%20pedir%20uma%20pizza." target="_blank" class="btn btn-whats" style="display:inline-flex; width: auto;"><i class="fa-brands fa-whatsapp"></i> Encomendar Pizza Agora</a>
             </div>
-            <div class="card">
-                <h3>🍎 Hortifrúti Fresquinho</h3>
-                <p>Frutas, verduras e legumes selecionados semanalmente para garantir o máximo de saúde e sabor para a sua mesa.</p>
-            </div>
-            <div class="card">
-                <h3>🛵 Delivery Rápido</h3>
-                <p>Receba suas compras e pizzas no conforto de sua residência com total agilidade na região da Martim de Sá.</p>
+            <div>
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza Martim Beach" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             </div>
         </div>
 
-        <div class="info-box">
+        <h2>Destaques e Ofertas da Semana</h2>
+        
+        <!-- SEÇÃO DE HORTIFRÚTI E OFERTAS -->
+        <div class="cards" id="hortifruti">
+            <div class="card">
+                <h3><i class="fa-solid fa-carrot"></i> Hortifrúti Fresquinho</h3>
+                <p>Frutas, verduras e legumes selecionados semanalmente para garantir o máximo de saúde e nutrição para a sua mesa.</p>
+                <span class="price-tag">Promoções especiais de quinta e sexta!</span>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-bread-slice"></i> Padaria & Doces</h3>
+                <p>Pão francês quentinho saindo nos horários principais, bolos frescos e lanches preparados na hora para o seu café.</p>
+                <span class="price-tag">Qualidade e Tradição</span>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-motorcycle"></i> Delivery Rápido</h3>
+                <p>Receba tudo com agilidade na região da Martim de Sá. Peça pelo iFood ou direto no nosso WhatsApp oficial.</p>
+                <span class="price-tag">Atendimento Ágil</span>
+            </div>
+        </div>
+
+        <div class="info-box" id="contato">
             <div>
                 <h4>📍 Endereço</h4>
                 <p>Av. Dr. Aldino Schiavi, nº 271<br>Martim de Sá, Caraguatatuba - SP</p>
@@ -95,8 +129,8 @@
                 <p>Todos os dias das 07:00 às 21:30</p>
             </div>
             <div>
-                <h4>📞 Contato</h4>
-                <p>Telefone: (12) 3211-2812<br>Atendimento rápido e direto</p>
+                <h4>📞 Contato & WhatsApp</h4>
+                <p>WhatsApp: (12) 99158-4371<br>Fixo: (12) 3211-2812</p>
             </div>
         </div>
     </section>
@@ -105,7 +139,7 @@
         <p>&copy; 2026 Martim Beach Mercado e Padaria. Desenvolvido para demonstração comercial local.</p>
     </footer>
 
-    <a href="https://wa.me/551232112812" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5512991584371" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
