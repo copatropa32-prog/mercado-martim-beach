@@ -15,8 +15,11 @@
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-container img { height: 45px; width: auto; border-radius: 6px; }
         .logo-container span { font-weight: 700; font-size: 1.2rem; color: #fff; }
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: 0.3s; }
         nav a:hover { color: #f39c12; }
+        .social-header { color: white; font-size: 1.2rem; transition: 0.3s; }
+        .social-header:hover { color: #e1306c; }
 
         /* Hero Section */
         .hero { background: linear-gradient(rgba(11,28,60,0.85), rgba(11,28,60,0.85)), url('mercado.png') center/cover; padding: 160px 10% 100px 10%; text-align: center; color: white; }
@@ -36,7 +39,7 @@
         .section h2 { font-size: 2.2rem; margin-bottom: 15px; color: #0b1c3c; font-weight: 700; }
         .section-sub { color: #666; margin-bottom: 50px; font-size: 1.05rem; }
 
-        /* Vitrine de Produtos (Fotos Reais) */
+        /* Vitrine de Produtos */
         .grid-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; text-align: left; }
         .card-vitrine { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.06); transition: 0.3s; border-top: 5px solid #f39c12; display: flex; flex-direction: column; justify-content: space-between; }
         .card-vitrine:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
@@ -55,15 +58,29 @@
         .map-container { margin-top: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid #0b1c3c; }
         .map-container iframe { width: 100%; height: 450px; border: 0; display: block; }
 
-        /* Rodapé e Informações */
-        .info-container { background: #0b1c3c; color: white; padding: 60px 8%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: left; border-top: 6px solid #f39c12; }
-        .info-box { max-width: 320px; }
-        .info-box h4 { color: #f39c12; margin-bottom: 15px; font-size: 1.25rem; }
-        .info-box p { color: #cbd5e1; line-height: 1.6; font-size: 0.95rem; }
+        /* Rodapé Profissional Estendido */
+        .footer-superior { background: #071328; color: #cbd5e1; padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; border-top: 6px solid #f39c12; text-align: left; }
+        .footer-col h4 { color: #f39c12; margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-col p, .footer-col ul { font-size: 0.95rem; line-height: 1.7; color: #94a3b8; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { color: #94a3b8; text-decoration: none; transition: color 0.2s; cursor: pointer; }
+        .footer-col ul li a:hover { color: #f39c12; }
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { background: rgba(255,255,255,0.08); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { background: #e1306c; transform: translateY(-2px); }
 
-        footer { background: #050d1a; color: #94a3b8; text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
-        footer img { height: 50px; width: auto; border-radius: 8px; }
-        footer p { font-size: 0.9rem; }
+        .footer-inferior { background: #040a17; color: #64748b; text-align: center; padding: 25px 20px; font-size: 0.88rem; display: flex; flex-direction: column; align-items: center; gap: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-inferior img { height: 40px; width: auto; border-radius: 6px; }
+
+        /* Janelas Modais (Pop-ups institucionais) */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); padding: 20px; }
+        .modal-content { background-color: #fff; margin: 5% auto; padding: 40px; border-radius: 12px; max-width: 700px; color: #333; text-align: left; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .modal-content h2 { color: #0b1c3c; margin-bottom: 20px; font-size: 1.8rem; border-bottom: 3px solid #f39c12; padding-bottom: 10px; display: inline-block; }
+        .modal-content h3 { color: #0b1c3c; margin-top: 20px; margin-bottom: 8px; font-size: 1.1rem; }
+        .modal-content p { font-size: 0.95rem; line-height: 1.6; color: #555; margin-bottom: 12px; }
+        .close-btn { color: #aaa; position: absolute; right: 25px; top: 25px; font-size: 32px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .close-btn:hover { color: #000; }
 
         /* WhatsApp Flutuante */
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; transition: transform 0.2s; }
@@ -71,7 +88,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.1rem; }
-            nav { display: none; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -83,12 +100,15 @@
             <img src="logo.png" alt="Martim Beach Logo">
             <span>Martim Beach</span>
         </div>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#vitrine">Produtos</a>
-            <a href="#videos">Vídeos</a>
-            <a href="#localizacao">Localização</a>
-        </nav>
+        <div class="nav-right">
+            <nav class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#vitrine">Produtos</a>
+                <a href="#videos">Vídeos</a>
+                <a href="#localizacao">Localização</a>
+            </nav>
+            <a href="https://www.instagram.com/martimbeachmercado/" target="_blank" class="social-header" title="Siga-nos no Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
     </header>
 
     <!-- HERO -->
@@ -101,7 +121,7 @@
         </div>
     </section>
 
-    <!-- VITRINE COM TODAS AS FOTOS REAIS -->
+    <!-- VITRINE -->
     <section class="section" id="vitrine">
         <h2>Conheça Nossos Setores</h2>
         <p class="section-sub">Tudo o que há de melhor em mercadoria, hortifrúti e padaria pertinho de você.</p>
@@ -148,68 +168,120 @@
             </div>
         </div>
 
-        <!-- VÍDEOS AUTORAIS COM CAPAS CORRETAS -->
+        <!-- VÍDEOS -->
         <div id="videos" style="margin-top: 90px;">
             <h2>Por Dentro do Martim Beach</h2>
             <p class="section-sub">Dê uma olhada em nossa estrutura, produtos e doces em vídeo.</p>
             
             <div class="grid-videos">
-                <!-- 1. Capa da Loja -->
-                <div class="video-card">
-                    <video controls src="videomercado.mp4" poster="mercado.png"></video>
-                </div>
-                <!-- 2. Capa de Vídeo 2 -->
-                <div class="video-card">
-                    <video controls src="mercadodentro.mp4" poster="capavideo2.png"></video>
-                </div>
-                <!-- 3. Vídeo de Doces (Pega o frame do segundo 2 automaticamente como capa) -->
-                <div class="video-card">
-                    <video controls src="doces.mp4#t=2"></video>
-                </div>
-                <!-- 4. Capa de Pães -->
-                <div class="video-card">
-                    <video controls src="videopaes2.mp4" poster="paes.png"></video>
-                </div>
+                <div class="video-card"><video controls src="videomercado.mp4" poster="mercado.png"></video></div>
+                <div class="video-card"><video controls src="mercadodentro.mp4" poster="capavideo2.png"></video></div>
+                <div class="video-card"><video controls src="doces.mp4#t=2"></video></div>
+                <div class="video-card"><video controls src="videopaes2.mp4" poster="paes.png"></video></div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE LOCALIZAÇÃO COM GOOGLE MAPS -->
+    <!-- LOCALIZAÇÃO -->
     <section class="location-section" id="localizacao">
         <h2>Onde Estamos</h2>
         <p class="section-sub">Venha nos fazer uma visita na Praia da Martim de Sá em Caraguatatuba.</p>
-        
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.156708451185!2d-45.4057!3d-23.6183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd7fd4d9981e7d%3A0x63d91ea4489a3ad5!2sAv.%20Dr.%20Aldino%20Schiavi%2C%20271%20-%20Martim%20de%20S%C3%A1%2C%20Caraguatatuba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
-    <!-- INFORMAÇÕES DE CONTATO -->
-    <div class="info-container" id="contato">
-        <div class="info-box">
-            <h4>📍 Endereço</h4>
-            <p>Av. Dr. Aldino Schiavi, 271<br>Martim de Sá, Caraguatatuba - SP</p>
+    <!-- RODAPÉ PROFISSIONAL -->
+    <footer>
+        <div class="footer-superior">
+            <div class="footer-col">
+                <h4>Martim Beach Mercado e Padaria</h4>
+                <p>Seu ponto de encontro de qualidade na Praia da Martim de Sá. Oferecemos produtos frescos, padaria artesanal, hortifrúti selecionado e ótimas opções para o seu dia a dia e momentos de lazer.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/martimbeachmercado/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/551232112812" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contato & Endereço</h4>
+                <p>📍 Av. Dr. Aldino Schiavi, 271<br>Martim de Sá, Caraguatatuba - SP</p>
+                <p style="margin-top: 10px;">📞 (12) 3211-2812<br>⏰ Aberto diariamente das 07h às 21h30</p>
+            </div>
+            <div class="footer-col">
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a onclick="abrirModal('modalSobre')">Sobre Nós</a></li>
+                    <li><a onclick="abrirModal('modalPrivacidade')">Política de Privacidade</a></li>
+                    <li><a onclick="abrirModal('modalTermos')">Termos de Uso</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="info-box">
-            <h4>⏰ Funcionamento</h4>
-            <p>Aberto todos os dias<br>Das 07:00 às 21:30</p>
+        <div class="footer-inferior">
+            <img src="logo.png" alt="Martim Beach Logo">
+            <p>&copy; 2026 Martim Beach Mercado e Padaria. Todos os direitos reservados.</p>
         </div>
-        <div class="info-box">
-            <h4>📞 Atendimento & WhatsApp</h4>
-            <p>Telefone / WhatsApp:<br>(12) 3211-2812</p>
+    </footer>
+
+    <!-- MODAL SOBRE NÓS -->
+    <div id="modalSobre" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal('modalSobre')">&times;</span>
+            <h2>Sobre Nós</h2>
+            <p>Fundado no coração da charmosa Praia da Martim de Sá em Caraguatatuba – SP, o <strong>Martim Beach Mercado e Padaria</strong> nasceu com a missão de proporcionar praticidade, frescor e excelência no atendimento aos moradores, turistas e veranistas da região.</p>
+            <p>Contamos com uma estrutura completa que une a agilidade de um mercado bem abastecido, a tradição de uma padaria com pães quentinhos e doces artesanais, além do nosso famoso setor de hortifrúti fresco e saborosas pizzas preparadas com ingredientes de primeira.</p>
+            <p>Nosso compromisso é ser o seu estabelecimento de confiança na praia, garantindo comodidade para que você aproveite o melhor de Caraguatatuba sem preocupações.</p>
         </div>
     </div>
 
-    <!-- RODAPÉ COM LOGOTIPO -->
-    <footer>
-        <img src="logo.png" alt="Martim Beach Rodapé">
-        <p>&copy; 2026 Martim Beach Mercado e Padaria. Todos os direitos reservados.</p>
-    </footer>
+    <!-- MODAL POLÍTICA DE PRIVACIDADE -->
+    <div id="modalPrivacidade" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal('modalPrivacidade')">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p>O <strong>Martim Beach</strong> preza pela segurança e privacidade dos dados de seus clientes e visitantes. Esta política descreve como tratamos suas informações ao utilizar nossos canais digitais e atendimento via WhatsApp ou iFood.</p>
+            <h3>1. Coleta de Informações</h3>
+            <p>Podemos coletar dados básicos estritamente necessários para atendimento, tais como nome, telefone de contato e endereço de entrega, fornecidos voluntariamente por você ao realizar pedidos ou entrar em contato conosco.</p>
+            <h3>2. Uso dos Dados</h3>
+            <p>As informações coletadas são utilizadas exclusivamente para processamento de pedidos, melhoria contínua dos nossos serviços e comunicação direta sobre entregas, promoções ou atendimento ao cliente.</p>
+            <h3>3. Proteção e Segurança</h3>
+            <p>Adotamos medidas técnicas e administrativas adequadas para proteger seus dados contra acessos não autorizados ou uso indevido.</p>
+        </div>
+    </div>
+
+    <!-- MODAL TERMOS DE USO -->
+    <div id="modalTermos" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal('modalTermos')">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p>Bem-vindo ao site do <strong>Martim Beach Mercado e Padaria</strong>. Ao acessar e utilizar este site, você concorda expressamente com os seguintes termos e condições:</p>
+            <h3>1. Propriedade Intelectual</h3>
+            <p>Todo o conteúdo exibido neste site (incluindo logotipos, imagens de produtos, vídeos institucionais, textos e layout) é de propriedade exclusiva do Martim Beach e protegido pelas leis de direitos autorais.</p>
+            <h3>2. Disponibilidade de Produtos e Preços</h3>
+            <p>Os produtos, ofertas (como a promoção de pizzas às quartas-feiras) e preços exibidos estão sujeitos a alterações sem aviso prévio e à disponibilidade de estoque em nossa loja física e plataformas de delivery parceiras.</p>
+            <h3>3. Contato e Atendimento</h3>
+            <p>Os pedidos realizados via canais digitais e WhatsApp estão sujeitos à confirmação de disponibilidade, horário de funcionamento e área de cobertura de entrega.</p>
+        </div>
+    </div>
 
     <!-- BOTÃO WHATSAPP FLUTUANTE -->
     <a href="https://wa.me/551232112812" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <!-- SCRIPT PARA CONTROLAR AS MODAIS -->
+    <script>
+        function abrirModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function fecharModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
